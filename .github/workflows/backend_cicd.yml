@@ -1,4 +1,4 @@
-name: CD - Deploy Backend Services to AKS
+name: CICD - Deploy Backend Services to AKS
 
 on:
   workflow_dispatch:
