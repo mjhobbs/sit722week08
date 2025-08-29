@@ -37,7 +37,7 @@ jobs:
 
       - name: Attach the ACR to the AKS
         run: |
-          az aks update --name week08ex3-AKS --resource-group ${{ github.event.inputs.aks_resource_group }} --attach-acr ${{ github.event.inputs.arc_container_name }}
+          az aks update --name ${{ github.event.inputs.aks_cluster_name }} --resource-group ${{ github.event.inputs.aks_resource_group }} --attach-acr ${{ github.event.inputs.arc_container_name }}
 
       - name: Set Kubernetes context (get AKS credentials)
         run: |
