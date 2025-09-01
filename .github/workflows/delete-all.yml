@@ -1,6 +1,6 @@
 # week08/.github/workflows/frontend-cd.yml
 
-name: Delete - Frontend from AKS
+name: Delete All Services from AKS
 
 # This workflow can be called by other workflows and takes inputs.
 # Or it can be run manually if you provide the IPs.
@@ -56,6 +56,12 @@ jobs:
           cd k8s/
           # Ensure frontend-service.yaml is configured with your ACR
           kubectl delete -f frontend.yaml
+          kubectl delete -f product-service.yaml
+          kubectl delete -f order-service.yaml
+          kubectl delete -f product-db.yaml
+          kubectl delete -f order-db.yaml
+          kubectl delete -f secrets.yaml
+          kubectl delete -f configmaps.yaml
 
       - name: Logout from Azure (AKS deployment)
         run: az logout
