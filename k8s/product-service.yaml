@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: product-service-container
-        image: <ACR_NAME>/<IMAGE_NAME>:<IMAGE_TAG>
+        image: week08arc.azurecr.io/product_service:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
