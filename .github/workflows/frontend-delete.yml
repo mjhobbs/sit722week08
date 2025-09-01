@@ -1,6 +1,6 @@
 # week08/.github/workflows/frontend-cd.yml
 
-name: CD - Deploy Frontend to AKS
+name: Delete - Frontend from AKS
 
 # This workflow can be called by other workflows and takes inputs.
 # Or it can be run manually if you provide the IPs.
