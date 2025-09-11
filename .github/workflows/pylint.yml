@@ -29,7 +29,13 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
-        # pylint --fail-under=7.0 $(git ls-files '*.py')
+        # pylint --fail-under=7.0 $(git ls-files '*.py') || true
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: lint.txt
+        path: lint.txt
+
     - name: Run Flake8
       run: |
         flake8 $(find . -name "*.py" -not -path "./.venv/*" -not -path "./env/*") --max-line-length=88
