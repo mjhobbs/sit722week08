@@ -26,7 +26,12 @@ jobs:
       run: |
         source venv/bin/activate
         python -m pip install --upgrade pip
-        pip install -r requirements/requirements.txt
+        # pip install -r requirements/requirements.txt
+        # Loop through each backend service folder
+        for req in backend/*/requirements.txt; do
+          echo "Installing $req"
+          pip install -r "$req"
+        done
         deactivate
       working-directory: ${{ github.workspace }}
 
