@@ -31,7 +31,7 @@ jobs:
         pylint $(git ls-files '*.py')
         # pylint --fail-under=7.0 $(git ls-files '*.py') || true
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: lint.txt
         path: lint.txt
